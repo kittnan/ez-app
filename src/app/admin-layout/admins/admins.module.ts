@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AdminsRoutingModule } from './admins-routing.module';
 import { AdminsComponent } from './admins.component';
@@ -19,6 +20,7 @@ import { UsersManageComponent } from './users-manage/users-manage.component';
     CommonModule,
     AdminsRoutingModule,
     AngularMaterialModule,
+    FormsModule,ReactiveFormsModule
   ]
 })
 export class AdminsModule { }
