@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderAdminComponent implements OnInit {
   title = 'ADMIN';
+  title1 = 'Register';
   public isAuthenticated = false;
 
   public logout(): void {

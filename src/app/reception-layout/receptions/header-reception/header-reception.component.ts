@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderReceptionComponent implements OnInit {
   title = 'ez-app';
+  title1 = 'Register';
   public isAuthenticated = false;
 
   public logout(): void {
