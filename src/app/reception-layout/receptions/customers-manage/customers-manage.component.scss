@@ -16,3 +16,16 @@ th.mat-sort-header-sorted {
     padding: 20px;
     border-radius: 10px;
 }
+
+
+
+.table > thead > tr > th{
+  text-align:left;
+  text-transform: uppercase;
+}
+
+
+.view-dialog > div >label{
+  font-weight: bolder;
+  text-transform: uppercase;
+}

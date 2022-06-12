@@ -7,7 +7,8 @@ import { ReceptionsComponent } from './receptions.component';
 import { HeaderReceptionComponent } from './header-reception/header-reception.component';
 import { AngularMaterialModule } from 'src/app/angular-material/angular-material.module';
 import { CustomersRegisterComponent } from './customers-register/customers-register.component';
-import { CustomersManageComponent } from './customers-manage/customers-manage.component';
+import { CustomersManageComponent, ViewDialog } from './customers-manage/customers-manage.component';
+import { CustomerEditComponent } from './customers-manage/customer-edit/customer-edit.component';
 
 
 @NgModule({
@@ -15,7 +16,10 @@ import { CustomersManageComponent } from './customers-manage/customers-manage.co
     ReceptionsComponent,
     HeaderReceptionComponent,
     CustomersRegisterComponent,
-    CustomersManageComponent
+    CustomersManageComponent,
+    ViewDialog,
+    CustomerEditComponent
+
   ],
   imports: [
     CommonModule,

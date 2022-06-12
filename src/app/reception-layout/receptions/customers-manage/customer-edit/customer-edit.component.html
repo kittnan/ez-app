@@ -1,0 +1,121 @@
+<div fxLayout="row" fxLayoutAlign="center">
+  <div class="container">
+    <mat-card>
+      <mat-card-title>Register</mat-card-title>
+      <form [formGroup]="registerForm">
+        <mat-card-content fxLayout="row wrap" fxFlexAlign="space-between">
+          <div fxFlex="50" fxFlex.sm="100" fxLayoutAlign="center">
+            <mat-form-field appearance="legacy" fxFlex="80">
+              <mat-label>Customer ID</mat-label>
+              <input
+                matInput
+                placeholder="NH-xxxx"
+                formControlName="customerId"
+              />
+              <!-- <mat-hint>Hint</mat-hint> -->
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" fxFlex.sm="100" fxLayoutAlign="center">
+            <mat-form-field appearance="legacy" fxFlex="80">
+              <mat-label>ID Card</mat-label>
+              <input matInput placeholder="" formControlName="idCard" />
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" fxFlex.sm="100" fxLayoutAlign="center">
+            <mat-form-field appearance="legacy" fxFlex="80">
+              <mat-label>Title Name</mat-label>
+              <input matInput placeholder="" formControlName="titleName" />
+              <!-- <mat-hint>Hint</mat-hint> -->
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" fxFlex.sm="100" fxLayoutAlign="center">
+            <mat-form-field appearance="legacy" fxFlex="80">
+              <mat-label>Gender</mat-label>
+              <input matInput placeholder="" formControlName="gender" />
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" fxFlex.sm="100" fxLayoutAlign="center">
+            <mat-form-field appearance="legacy" fxFlex="80">
+              <mat-label>FirstName</mat-label>
+              <input matInput placeholder="" formControlName="firstName" />
+              <!-- <mat-hint>Hint</mat-hint> -->
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" fxFlex.sm="100" fxLayoutAlign="center">
+            <mat-form-field appearance="legacy" fxFlex="80">
+              <mat-label>LastName</mat-label>
+              <input matInput placeholder="" formControlName="lastName" />
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" fxFlex.sm="100" fxLayoutAlign="center">
+            <mat-form-field color="accent" appearance="fill" fxFlex="80">
+              <mat-label>BirthDay</mat-label>
+              <input matInput [matDatepicker]="picker1" formControlName="birthDay" />
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker1"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+
+            <!-- <mat-form-field appearance="legacy" fxFlex="80">
+                          <mat-label>BirthDay</mat-label>
+                          <input matInput placeholder="" formControlName="birthDay" />
+                      </mat-form-field> -->
+          </div>
+          <div fxFlex="50" fxFlex.sm="100" fxLayoutAlign="center">
+            <mat-form-field appearance="legacy" fxFlex="80">
+              <mat-label>Age</mat-label>
+              <input matInput placeholder="" formControlName="age" />
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" fxFlex.sm="100" fxLayoutAlign="center">
+            <mat-form-field appearance="legacy" fxFlex="80">
+              <mat-label>Address</mat-label>
+              <input matInput placeholder="" formControlName="address" />
+              <!-- <mat-hint>Hint</mat-hint> -->
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" fxFlex.sm="100" fxLayoutAlign="center">
+            <mat-form-field appearance="legacy" fxFlex="80">
+              <mat-label>PhoneNumber</mat-label>
+              <input matInput placeholder="" formControlName="phoneNumber" />
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" fxFlex.sm="100" fxLayoutAlign="center">
+            <mat-form-field appearance="legacy" fxFlex="80">
+              <mat-label>CongenitalDisease</mat-label>
+              <input
+                matInput
+                placeholder=""
+                formControlName="congenitalDisease"
+              />
+              <!-- <mat-hint>Hint</mat-hint> -->
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" fxFlex.sm="100" fxLayoutAlign="center">
+            <mat-form-field appearance="legacy" fxFlex="80">
+              <mat-label>Allergic</mat-label>
+              <input matInput placeholder="" formControlName="allergic" />
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" fxFlex.sm="100" fxLayoutAlign="center">
+            <mat-form-field appearance="legacy" fxFlex="80">
+              <mat-label>Description</mat-label>
+              <input matInput placeholder="" formControlName="description" />
+            </mat-form-field>
+          </div>
+        </mat-card-content>
+      </form>
+
+      <mat-card-footer fxLayout="row wrap" fxFlexAlign="center">
+        <div fxFlex="100" fxLayoutAlign="center">
+          <button mat-raised-button color="primary" (click)="onSubmit()">
+            Save
+          </button>
+        </div>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+</div>

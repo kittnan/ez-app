@@ -1,0 +1,83 @@
+<h2 mat-dialog-title>Infomation</h2>
+<mat-dialog-content class="mat-typography">
+<div fxLayout="row wrap" fxFlexAlign="center" class="view-dialog">
+  <div fxFlex="50">
+    <label>Customer Id </label>
+    <p>{{data.customerId}}</p>
+  </div>
+  <div fxFlex="50">
+    <label>ID Card </label>
+    <p>{{data.idCard}}</p>
+  </div>
+  <div fxFlex="50">
+    <label>name </label>
+    <p>{{data.titleName}} {{data.firstName}} {{data.lastName}}</p>
+  </div>
+  <div fxFlex="50">
+    <label>gender </label>
+    <p>{{data.gender}}</p>
+  </div>
+  <div fxFlex="50">
+    <label>birthday </label>
+    <p>{{data.birthDay | date:'medium'}}</p>
+  </div>
+  <div fxFlex="50">
+    <label>address </label>
+    <p>{{data.address}}</p>
+  </div>
+  <div fxFlex="50">
+    <label>phoneNumber </label>
+    <p>{{data.phoneNumber}}</p>
+  </div>
+  <div fxFlex="50">
+    <label>xrayImage </label>
+    <mat-chip-list aria-label="Dog selection">
+      <mat-chip>
+        <mat-chip-avatar>
+            <img src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
+        </mat-chip-avatar>
+        Pic one
+      </mat-chip>
+      <mat-chip color="primary">
+        <mat-chip-avatar>
+            <img src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
+        </mat-chip-avatar>
+        Pic two
+      </mat-chip>
+      <mat-chip color="accent">
+        <mat-chip-avatar>
+            <img src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
+        </mat-chip-avatar>
+        Pic three
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+  <div fxFlex="50">
+    <label>congenitalDisease </label>
+    <p>{{data.congenitalDisease}}</p>
+  </div>
+  <div fxFlex="50">
+    <label>allergic </label>
+    <p>{{data.allergic}}</p>
+  </div>
+  <div fxFlex="50">
+    <label>description </label>
+    <p>{{data.description}}</p>
+  </div>
+  <div fxFlex="50">
+    <label>status </label>
+    <p>{{data.status}}</p>
+  </div>
+  <div fxFlex="50">
+    <label>tokenLine </label>
+    <p>{{data.tokenLine}}</p>
+  </div>
+  <div fxFlex="50">
+    <label>updateBy </label>
+    <p>{{data.updateBy}}</p>
+  </div>
+</div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

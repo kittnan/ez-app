@@ -3,33 +3,36 @@
         <div>
             <mat-form-field fxFlex="30">
                 <input matInput type="search" placeholder="Search" value="" (input)="onSearch($event)" />
+
             </mat-form-field>
+
         </div>
         <mat-card>
             <mat-card-title>Manage</mat-card-title>
 
-            <table>
+            <table class="table">
                 <thead>
                     <tr>
-                        <th width="12%"></th>
-                        <td>Customer ID</td>
-                        <td>ID</td>
-                        <td>name</td>
-
-
-
-
+                      <th >Customer ID</th>
+                      <th>ID card</th>
+                      <th>name</th>
+                      <th width="15%" style="text-align: center;">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let customer of filtered; let i = index">
-                        <td>
-                            <button mat-mini-fab><mat-icon>edit</mat-icon></button>
-                            <button mat-mini-fab color="warn" style="margin-left: 10px;" (click)="onClickDelete(customer)"><mat-icon>delete</mat-icon></button>
-                        </td>
-                        <td>{{customer.customerId}}</td>
-                        <td>{{customer.idCard}}</td>
-                        <td>{{customer.titleName}} {{customer.firstName}} {{customer.lastName}}</td>
+                      <td>{{customer.customerId}}</td>
+                      <td>{{customer.idCard}}</td>
+                      <td>{{customer.titleName}} {{customer.firstName}} {{customer.lastName}}</td>
+                      <td style="text-align: center;">
+                          <button mat-mini-fab [matMenuTriggerFor]="menu"><mat-icon>settings</mat-icon></button>
+                          <mat-menu #menu="matMenu">
+                            <button  mat-mini-fab  style="margin-left: 10px;" (click)="onEdit(customer)"><mat-icon>edit</mat-icon></button>
+                            <button  mat-mini-fab color="warn" style="margin-left: 10px;" (click)="onClickDelete(customer)"><mat-icon>delete</mat-icon></button>
+                          </mat-menu>
+                          <button mat-mini-fab color="primary" style="margin-left: 10px;" (click)="openDialog(customer)" ><mat-icon>search</mat-icon></button>
+
+                      </td>
 
 
 
@@ -41,3 +44,5 @@
         </mat-card>
     </div>
 </div>
+
+
