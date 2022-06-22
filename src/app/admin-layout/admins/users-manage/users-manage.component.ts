@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/API/api.service';
 import Swal from 'sweetalert2';
-
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-users-manage',
   templateUrl: './users-manage.component.html',
@@ -13,7 +14,8 @@ export class UsersManageComponent implements OnInit {
   filtered:any[] = []
   searchKey:any
   constructor(
-    private API : ApiService
+    private API : ApiService ,public dialog: MatDialog,
+    private router: Router
   ) {
 
    }
@@ -56,6 +58,22 @@ export class UsersManageComponent implements OnInit {
           })
         }
     })
+  }
+
+  onEdit(item:any){
+    const itemStr:string = JSON.stringify(item)
+    sessionStorage.setItem('member',itemStr)
+    this.router.navigate(['/admins/manage/edit'])
+  }
+
+  openDialog(item:any) {
+    // const dialogRef = this.dialog.open(ViewDialog, {
+    //   data: item,
+    // });
+
+    // dialogRef.afterClosed().subscribe((result) => {
+    //   console.log(`Dialog result: ${result}`);
+    // });
   }
 
 }

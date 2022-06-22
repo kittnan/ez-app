@@ -9,6 +9,7 @@ import { AngularMaterialModule } from 'src/app/angular-material/angular-material
 import { UsersRegisterComponent } from './users-register/users-register.component';
 import { UsersManageComponent } from './users-manage/users-manage.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UsersEditComponent } from './users-manage/users-edit/users-edit.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderAdminComponent,
     UsersRegisterComponent,
     UsersManageComponent,
+    UsersEditComponent,
   ],
   imports: [
     CommonModule,

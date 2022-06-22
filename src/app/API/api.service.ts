@@ -35,4 +35,7 @@ export class ApiService {
   deleteMember(id:any): Observable<any>{
     return this.http.delete(`${this.URLAPI}/members/delete/`+id)
   }
+  updateMember(id:any,data:any): Observable<any>{
+    return this.http.put(`${this.URLAPI}/members/update/`+id,data)
+  }
 }
