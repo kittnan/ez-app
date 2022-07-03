@@ -36,7 +36,12 @@ export class LoginComponent implements OnInit {
       setTimeout(() => {
         this.route.navigate(['receptions/register']);
       }, 2500);
-    } else {
+    } if (this.loginForm.value.username == 'doc') {
+      this.openSnackBar('success', '');
+      setTimeout(() => {
+        this.route.navigate(['doctor/']);
+      }, 2500);
+    }else {
       this.openSnackBar('login fail', 'something it wrong');
     }
   }
