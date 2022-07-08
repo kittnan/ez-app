@@ -38,4 +38,19 @@ export class ApiService {
   updateMember(id:any,data:any): Observable<any>{
     return this.http.put(`${this.URLAPI}/members/update/`+id,data)
   }
+
+  getCheckup(): Observable<any>{
+    return this.http.get(`${this.URLAPI}/checkup/`)
+  }
+  addCheckup(data:any): Observable<any>{
+    return this.http.post(`${this.URLAPI}/checkup/add/`,data)
+  }
+  // deleteCheckupid:any): Observable<any>{
+  //   return this.http.delete(`${this.URLAPI}/Checkup/delete/`+id)
+  // }
+  // updateCheckupid:any,data:any): Observable<any>{
+  //   return this.http.put(`${this.URLAPI}/Checkup/update/`+id,data)
+  // }
+
+  
 }

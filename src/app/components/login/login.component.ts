@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
       setTimeout(() => {
         this.route.navigate(['receptions/register']);
       }, 2500);
-    } if (this.loginForm.value.username == 'doc') {
+    } else if (this.loginForm.value.username == 'doc') {
       this.openSnackBar('success', '');
       setTimeout(() => {
         this.route.navigate(['doctor/']);
