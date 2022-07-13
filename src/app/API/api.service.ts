@@ -45,12 +45,12 @@ export class ApiService {
   addCheckup(data:any): Observable<any>{
     return this.http.post(`${this.URLAPI}/checkup/add/`,data)
   }
-  // deleteCheckupid:any): Observable<any>{
-  //   return this.http.delete(`${this.URLAPI}/Checkup/delete/`+id)
-  // }
-  // updateCheckupid:any,data:any): Observable<any>{
-  //   return this.http.put(`${this.URLAPI}/Checkup/update/`+id,data)
-  // }
+  deleteCheckup(id:any): Observable<any>{
+    return this.http.delete(`${this.URLAPI}/Checkup/delete/`+id)
+  }
+  updateCheckup(id:any,data:any): Observable<any>{
+    return this.http.put(`${this.URLAPI}/Checkup/update/`+id,data)
+  }
 
-  
+
 }

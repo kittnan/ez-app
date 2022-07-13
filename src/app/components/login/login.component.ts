@@ -7,6 +7,7 @@ import {
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-login',
@@ -21,35 +22,29 @@ export class LoginComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
 
-  constructor(private route: Router, private _snackBar: MatSnackBar) {}
+  constructor(private route: Router, private _toast: ToastService) {}
 
   ngOnInit(): void {}
 
   onLogin() {
     if (this.loginForm.value.username == 'admin') {
-      this.openSnackBar('success', '');
+      this._toast.success();
       setTimeout(() => {
         this.route.navigate(['admins/register']);
       }, 2500);
     } else if (this.loginForm.value.username == 're') {
-      this.openSnackBar('success', '');
+      this._toast.success();
       setTimeout(() => {
         this.route.navigate(['receptions/register']);
       }, 2500);
     } else if (this.loginForm.value.username == 'doc') {
-      this.openSnackBar('success', '');
+      this._toast.success();
       setTimeout(() => {
         this.route.navigate(['doctor/']);
       }, 2500);
     }else {
-      this.openSnackBar('login fail', 'something it wrong');
+      this._toast.danger('login fail something it wrong')
     }
   }
-  openSnackBar(text1: string, text2: string) {
-    this._snackBar.open(text1, text2, {
-      horizontalPosition: this.horizontalPosition,
-      verticalPosition: this.verticalPosition,
-      duration: 2000,
-    });
-  }
+
 }

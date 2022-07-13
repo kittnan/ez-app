@@ -1,0 +1,62 @@
+<div fxLayout="row wrap" fxLayoutAlign="center stretch" >
+  <mat-form-field fxFlex="80" appearance="legacy" style="margin-top: 20px">
+    <mat-label>Select Master</mat-label>
+    <mat-select [(ngModel)]="master" (selectionChange)="onSelect()">
+      <mat-option *ngFor="let master of masters" [value]="master">
+        {{ master | uppercase }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="masters_select.length>0" fxFlex="80" appearance="legacy">
+    <mat-label>Filter</mat-label>
+    <input matInput #keyFilter (input)="onFilter(keyFilter.value)" />
+  </mat-form-field>
+
+  <table *ngIf="filtered.length > 0" fxFlex="80" class="tableFixHead"  >
+    <thead>
+      <tr>
+        <th width="5%">No.</th>
+        <th width="10%">GroupType</th>
+        <th width="10%">group</th>
+        <th width="5%">code</th>
+        <th width="60%">items</th>
+        <th width="10%" >
+          <button mat-icon-button color="primary" (click)="onAdd()" >
+            <mat-icon>playlist_add</mat-icon>
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let master of filtered; let i = index">
+        <td>
+          {{ i + 1 }}
+        </td>
+        <td>
+          {{ master.groupType }}
+        </td>
+        <td>
+          {{ master.group }}
+        </td>
+        <td>
+          {{ master.code }}
+        </td>
+        <td>
+          <ul *ngFor="let item of master.items; let i = index">
+            <li>{{ item.code }} -> {{ item.name }}</li>
+          </ul>
+        </td>
+        <td style="text-align: center;">
+          <button mat-icon-button color="warn" [matMenuTriggerFor]="menu">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="onEdit(master)">Edit</button>
+            <button mat-menu-item (click)="onDelete(master)">Delete</button>
+          </mat-menu>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

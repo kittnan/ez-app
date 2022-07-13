@@ -10,6 +10,8 @@ import { UsersRegisterComponent } from './users-register/users-register.componen
 import { UsersManageComponent } from './users-manage/users-manage.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersEditComponent } from './users-manage/users-edit/users-edit.component';
+import { MasterManageComponent } from './master-manage/master-manage.component';
+import { DialogCheckupComponent } from './master-manage/dialog-checkup/dialog-checkup.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { UsersEditComponent } from './users-manage/users-edit/users-edit.compone
     UsersRegisterComponent,
     UsersManageComponent,
     UsersEditComponent,
+    MasterManageComponent,
+    DialogCheckupComponent,
   ],
   imports: [
     CommonModule,

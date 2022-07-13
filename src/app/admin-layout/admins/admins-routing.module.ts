@@ -4,6 +4,7 @@ import { AdminsComponent } from './admins.component';
 import { UsersManageComponent } from './users-manage/users-manage.component';
 import { UsersRegisterComponent } from './users-register/users-register.component';
 import { UsersEditComponent } from './users-manage/users-edit/users-edit.component';
+import { MasterManageComponent } from './master-manage/master-manage.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
       {
         path: 'manage/edit',
         component: UsersEditComponent,
+      },
+      {
+        path: 'master',
+        component: MasterManageComponent,
       },
       {
         path: '',
